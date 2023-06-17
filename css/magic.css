@@ -1,0 +1,141 @@
+@property --gradient-angle {
+	syntax: "<angle>";
+	initial-value: 0deg;
+	inherits: false;
+}
+
+:root {
+  --clr-bg: #181818;
+  --clr-txt-soft: #f7f7f7;
+	
+	--clr-gradient-1: #2E0249;
+	--clr-gradient-2: #570A57;
+	--clr-gradient-3: #A91079;
+	--clr-gradient-4: #F806CC;
+	
+	--clr-success: #3CB371;
+		
+	--btn-x: 50%;
+	--btn-y: 50%;
+	--animation-duration: 200ms;
+}
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+	height: 100vh;
+  background-color: var(--clr-bg);
+  color: var(--clr-txt-soft);
+  scroll-behavior: smooth;
+  font-family: Roboto, sans-serif;
+  line-height: 1.6;
+	transition: background-color 300ms ease;
+}
+
+div[role="fleeing-btn"] {
+  background: #111;
+  border-radius: 0.5rem;
+  position: absolute;
+	left: var(--btn-x);
+	top: var(--btn-y);
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+	user-select: none;
+	backdrop-filter: blur(3.5rem)
+}
+
+div[role="fleeing-btn"]::before,
+div[role="fleeing-btn"]::after {
+	content: '';
+	position: absolute;
+	inset: -.25rem;
+	background: conic-gradient(
+		from var(--gradient-angle),
+		var(--clr-gradient-1), 
+		var(--clr-gradient-2), 
+		var(--clr-gradient-3), 
+		var(--clr-gradient-2), 
+		var(--clr-gradient-1));
+	border-radius: inherit;
+	animation: rotate 15s linear infinite;
+	z-index: -1;
+}
+
+div[role="fleeing-btn"] > div {
+  background: rgba(17, 17, 17, .8);
+	padding: .6rem;
+	border-radius: inherit;
+	color: rgba(247, 247, 247, .8);
+	font-family: 'Play', sans-serif;
+}
+
+div[role="counter"] {
+	position: absolute;
+	bottom: 1.5rem;
+	right: 2.5rem;
+	font-size: 2rem;
+}
+
+.disappear {
+	animation: disappear var(--animation-duration) ease forwards;
+}
+
+.appear {
+	animation: appear var(--animation-duration) ease forwards;
+}
+
+.success {
+	animation: success 800ms ease forwards;
+}
+
+@keyframes disappear {
+	from {
+		transform: translate(-50%, -50%) scale(1)
+	}
+	
+	to {
+		transform: translate(-50%, -50%) scale(0)
+	}
+}
+
+@keyframes appear {
+	from {
+		transform: translate(-50%, -50%) scale(0)
+	}
+	
+	to {
+		transform: translate(-50%, -50%) scale(1)
+	}
+}
+
+@keyframes success {
+	0% {
+		background: #111
+	}
+	
+	50% {
+		background: var(--clr-success)
+	}
+	
+	100% {
+		background: #111
+	}
+}
+
+@keyframes rotate {
+	0% { --gradient-angle: 0deg}
+	100% { --gradient-angle: 360deg}
+}

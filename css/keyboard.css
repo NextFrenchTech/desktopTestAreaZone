@@ -159,7 +159,7 @@ body {
 	box-shadow: 0 0 0 0.5em hsla(223,90%,50%,0.5);
 }
 
-/* Dark theme */
+/*dark theme*/
 @media (prefers-color-scheme: dark) {
 	:root {
 		--bg: hsl(var(--hue),var(--sat),20%);
