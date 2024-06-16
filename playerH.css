@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Charmonman:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Charmonman', cursive;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+/* #for white theme */
+body.box {
+    background-size: cover;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-position: 50% 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+}
+/* currently it is light theme but later with help of js we will make toggle button which will tranform it to dark and light mode */
+html {
+    --bg: #f5f6f7;
+    --color-text: #9c9c9c;
+    --banner: #333333;
+    --color-shadow: -4px -2px 4px 0px #ffffff, 4px 2px 6px 0 #dfe4ea;
+    --color-inset-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.8),
+        inset 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="dark"] {
+    --bg: #121212;
+    --color-text: #e2e2e2;
+    --banner: #fefefe;
+    --color-shadow: -3px -3px 10px rgba(255, 255, 255, 0.05),
+        3px 3px 15px rgba(0, 0, 0, 0.5);
+    --color-inset-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.01),
+        inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+body {
+    background: var(--bg);
+    color: var(--color-text);
+}
+
+a {
+    text-decoration: none;
+}
+
+.player {
+    width: 80%;
+    min-height: 480px;
+    max-width: 300px;
+    padding: 2rem 1.25rem;
+    margin: auto;
+    background: var(--bg);
+    box-shadow: var(--color-shadow);
+    border-radius: 15px;
+    position: relative;
+    border: 2px outset rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 1px 24px -1px rgba(0, 0, 0, 0.2),
+        0 1.5em 2em -1em rgba(0, 0, 0, 0.8), inset 0 0.0625em 0 white,
+        inset 0 -0.125em 0.0625em rgba(0, 0, 0, 0.3);
+    transform: scale(0.875);
+    backdrop-filter: blur(20px);
+    background-image: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.15),
+        transparent
+    );
+    background-color: rgba(0, 0, 0, 0.05);
+    background-image: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+}
+
+header {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+header p {
+    color: #f5f6f7;
+    opacity: 0.75;
+}
+
+.image {
+    display: block;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    margin: 1rem auto;
+    border-radius: 50%;
+    border: 2px solid #dcdfe2;
+    box-shadow: var(--color-shadow);
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.4), inset 0 0px 1px rgba(0, 0, 0, 0.3),
+        0 1px 2px rgba(0, 0, 0, 0.6), 0 4px 2px rgba(0, 0, 0, 0.2),
+        0 9px 4px rgba(0, 0, 0, 0.1), inset 0 2px 1px rgba(255, 255, 255, 0.6);
+}
+
+.information {
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+.information h1 {
+    color: var(--black);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #f5f6f7;
+}
+
+.information p {
+    font-size: 1.15rem;
+    color: var(--color-text);
+    text-overflow: clip;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden !important;
+}
+
+.progress {
+    padding: 0 0 10px 0;
+}
+
+.progress-time {
+    padding: 3px 5px;
+    color: var(--color-text);
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    color: #f5f6f7;
+    opacity: 0.75;
+}
+
+.progress-time > p {
+    font-size: 0.65rem;
+}
+
+.buttons {
+    margin: 0.75rem 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.button {
+    color: var(--color-text);
+    border-radius: 50%;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--color-shadow);
+}
+
+.button-sm {
+    width: 2rem;
+    height: 2rem;
+    opacity: 0.75;
+}
+.button-md {
+    width: 2.5rem;
+    height: 2.5rem;
+    opacity: 0.85;
+}
+.button-lg {
+    width: 3.25rem;
+    height: 3.25rem;
+}
+
+.button-lg,
+.button-md,
+.button-sm {
+    background: #f5f6f7;
+    background-image: -webkit-gradient(
+        linear,
+        right top,
+        right bottom,
+        color-stop(0%, #ffffff),
+        color-stop(100%, #d3d1cb)
+    );
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.71),
+        inset 0px -2px 1px 0px #aeaeae, inset 0px 2px 1px 0px #fff;
+}
+
+.bar {
+    width: 50%;
+    height: 2px;
+    margin: auto;
+    background: var(--color-text);
+    border-radius: 25px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    bottom: 1rem;
+}
+
+.playpause.active {
+    box-shadow: var(--color-inset-shadow);
+}
+
+.loop.active,
+.shuffle:active,
+.prev:active,
+.next:active {
+    box-shadow: var(--color-inset-shadow);
+}
+
+.fa-play {
+    display: block;
+}
+
+.fa-pause {
+    display: none;
+}
+
+.playpause.active .fa-play {
+    display: none;
+}
+
+.playpause.active .fa-pause {
+    display: block;
+}
+
+.playpause .fa-pause {
+    display: none;
+}
+
+#seekslider {
+    width: 140px;
+    max-width: 50%;
+    height: 6px !important;
+    -webkit-appearance: none;
+    border-radius: 10px;
+    /*background: #ccc;*/
+    z-index: 3;
+    outline: none;
+    position: fixed;
+    margin-left: 60px;
+    margin-top: -10px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5), inset 0 0 4px 2px rgba(0, 0, 0, 0.3),
+        0px -2px 2px rgba(0, 0, 0, 0.5), 0px 2px 2px rgba(255, 255, 255, 0.2);
+}
+
+#seekslider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    background: var(--color-text);
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    transform: scale(1);
+    box-shadow: -0.2em -0.125em 0.125em rgb(0 0 0 / 25%),
+        0 0 0 0.04em rgb(0 0 0 / 30%), 0.02em 0.02em 0.02em rgb(0 0 0 / 40%) inset,
+        -0.05em -0.05em 0.02em rgb(255 255 255 / 80%) inset;
+}
+
+.seekslider:active::-webkit-slider-thumb {
+    transform: scale(1.2);
+}
+
+label {
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+}
+
+img#image.image.no-rotate {
+    animation: none;
+}
+
+img#image.image.rotate {
+    animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.repeat,
+.random-track,
+.playpause-track,
+.prev-track,
+.next-track {
+    padding: 25px;
+}
+
+.repeat:hover,
+.random-track:hover,
+.playpause-track:hover,
+.prev-track:hover,
+.next-track:hover {
+    opacity: 1;
+}
+
+#playlist_artist {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    font-weight: 600;
+    filter: drop-shadow(0.5px 0.5px 0.45px #090909)
+        drop-shadow(-0.25px -0.25px 0.25px #ddd) saturate(1.5) brightness(1.025)
+        contrast(1.025);
+}
+
+img#image {
+    padding: 3px;
+}
+
+span.spin::before {
+content: "";
+width: 20px;
+height: 20px;
+position: absolute;
+z-index: 3;
+top: 34%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: #d6dee7;
+box-shadow: inset 0 0 0 2px #fff;
+border-radius: 50%;
+}
+
+.Flowers {
+    background: linear-gradient(
+        90deg,
+        #05274d,
+        #005280,
+        #1a6e98,
+        #5184a8,
+        #b8cbe0
+    );
+}
+
+.Dreamin.Of.The.Past {
+    background: linear-gradient(
+            180deg,
+            hsla(0, 0%, 100%, 0.5) 0,
+            rgba(0, 0, 0, 0.5)
+        ),
+        radial-gradient(at 50% 0, hsla(0, 0%, 100%, 0.1) 0, rgba(0, 0, 0, 0.5) 50%);
+    background: linear-gradient(
+        345deg,
+        #6d1b10,
+        #af3f26,
+        #d76a5b,
+        #d22f1c,
+        #d74411,
+        #d66515,
+        #df8802,
+        #e1aa15,
+        #d3c0a7
+    );
+}
+
+.I.Cannot.Be {
+    background: linear-gradient(180deg, #323232 0, #3f3f3f 40%, #1c1c1c 150%),
+        linear-gradient(0deg, hsla(0, 0%, 100%, 0.4) 0, rgba(0, 0, 0, 0.25) 200%);
+}
+
+.Sidewalks {
+    background: linear-gradient(
+        16deg,
+        red,
+        hsl(231 75% 21% / 1),
+        hsl(232 58% 17% / 1),
+        #2f2f2f,
+        #ba0536,
+        #cd0e3d,
+        #d50a39,
+        #dc0535,
+        red,
+        hsl(348.66deg 85.77% 50.39%)
+    );
+}
+
+p.Sidewalks,
+input#seekslider.Sidewalks {
+    background: linear-gradient(
+        50deg,
+        #051341,
+        #0b184b,
+        #044aed,
+        #1779b9,
+        #a2041f,
+        #cd0e3d,
+        #dd052c,
+        #e8b808
+    );
+}
+
+.Love.You.More {
+    background: linear-gradient(
+        20deg,
+        #f36da9,
+        #dd4fa2,
+        #cd3777,
+        #af366b,
+        #8e3562,
+        #4e0726,
+        #260218
+    );
+}
+
+.Big.Lie {
+    background: linear-gradient(-60deg, #ff5858, #f09819);
+}
+
+.All.Of.The.Lights {
+    background: linear-gradient(
+        90deg,
+        #ee2c46,
+        #ed2440,
+        #ef2541,
+        #ea2641,
+        #e42741,
+        #d82840
+    );
+}
+.Honest {
+    background: linear-gradient(60deg, #abecd6, #fbed96);
+}

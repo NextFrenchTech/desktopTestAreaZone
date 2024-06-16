@@ -1,0 +1,51 @@
+body {
+    background: #1d1f20;
+}
+
+.green {
+    color: #090;
+}
+
+.mic {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    padding: 20px;
+    font-size: 100px;
+    border: 5px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.mic.not-listening {
+    background: #900;
+}
+
+.mic.listening {
+    background: #090;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+}
+
+.output {
+    margin: 30px;
+    color: #fff;
+}
+
+.cmd {
+    margin-bottom: 10px;
+}
+
+.recognised {
+    color: #000;
+    background: #ffc;
+    padding: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-transform: initial;
+}

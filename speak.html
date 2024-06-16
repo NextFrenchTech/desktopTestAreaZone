@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Area Zone Desktop</title>
+    <link rel="stylesheet" href="speak.css">
+</head>
+<body>
+
+<div id="speechnav">
+	<label for="voices">Voice:<br><div class="select"><select name="voices" id="voices" title="Selects TTS voice"></select></div></label>
+	<div id="voiceinfo"></div>
+	<label for="pitch" title="Sets the TTS pitch">Pitch: <span>1</span><br><input type="range" name="pitch" id="pitch" min="0" max="2" step="0.01" value="1"></label><br>
+	<label for="rate" title="Sets the TTS rate">Rate: <span>1</span><br><input type="range" name="rate" id="rate" min="0" max="10" step="0.01" value="1"></label><br>
+	<label for="volume" title="Sets the TTS volume">Volume: <span>1</span><br><input type="range" name="volume" id="volume" min="0" max="1" step="0.01" value="1"></label><br><br>
+	<label for="text" title="The text to speak">Text:<br><input type="text" name="text" id="text" value="Bonjour, je m'appel text to speak ! Je serais votre assistant de lecture ! Il vous suffira de mettre en surbrillance le texte que vous souhaitez que je vous lise !" size="50"></label>
+	<br><br>
+</div>
+<div id="wordoutput" title="Shows the word spoken if 'onboundary' is supported">
+	<button type="button" name="talk" id="talk">🔊 Speak</button>
+</div>
+
+<script src="speak.js"></script>
+</body>
+</html>

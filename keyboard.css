@@ -4,6 +4,7 @@
 	margin: 0;
 	padding: 0;
 }
+
 :root {
 	--hue: 0;
 	--sat: 0%;
@@ -12,11 +13,13 @@
 	--trans-dur: 0.3s;
 	font-size: calc(16px + (24 - 16) * (100vw - 320px) / (2560 - 320));
 }
+
 body,
 button {
 	color: var(--fg);
 	font: 1em/1.5 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 }
+
 body {
 	background-color: var(--bg);
 	background-image: linear-gradient(-45deg,hsla(var(--hue),var(--sat),0%,0),hsla(var(--hue),var(--sat),0%,0.3));
@@ -26,6 +29,7 @@ body {
 		background-color var(--trans-dur),
 		color var(--trans-dur);
 }
+
 .keyboard,
 .keyboard:before,
 .keyboard:after {
@@ -33,10 +37,12 @@ body {
 		background-color var(--trans-dur),
 		box-shadow var(--trans-dur);
 }
+
 .keyboard,
 .keyboard__key-lines {
 	display: flex;
 }
+
 .keyboard {
 	background-color: hsl(var(--hue),var(--sat),80%);
 	background-image: linear-gradient(90deg,hsla(var(--hue),var(--sat),10%,0.4),hsla(var(--hue),var(--sat),10%,0));
@@ -51,6 +57,7 @@ body {
 	width: 18.5em;
 	height: 6.5em;
 }
+
 .keyboard:before,
 .keyboard:after {
 	background-color: hsl(var(--hue),var(--sat),90%);
@@ -59,6 +66,7 @@ body {
 	position: absolute;
 	bottom: 100%;
 }
+
 .keyboard:before {
 	box-shadow:
 		-0.5em -0.5em 0.75em hsla(0,0%,0%,0.6),
@@ -68,6 +76,7 @@ body {
 	width: 1em;
 	height: 40em;
 }
+
 .keyboard:after {
 	border-radius: 0.25em 0.25em 0 0;
 	box-shadow: 0.375em -0.25em 0.5em hsla(var(--hue),var(--sat),10%,0.5) inset;
@@ -75,11 +84,13 @@ body {
 	width: 1.5em;
 	height: 1.25em;
 }
+
 .keyboard__cmd {
 	display: block;
 	width: 1em;
 	height: 1em;
 }
+
 .keyboard__key {
 	background-color: hsl(var(--hue),var(--sat),95%);
 	border-radius: 0.5em;
@@ -106,9 +117,11 @@ body {
 	user-select: none;
 	-webkit-tap-highlight-color: transparent;
 }
+
 .keyboard__key--meta {
 	width: 5.5em;
 }
+
 .keyboard__key:active,
 .keyboard__key.active {
 	box-shadow:
@@ -117,19 +130,24 @@ body {
 		0 -0.05em 0 hsla(0,0%,0%,0.6) inset,
 		-0.05em -0.15em 0.05em hsla(0,0%,100%,0.8) inset;
 }
+
 .keyboard__key-line {
 	font-size: 2em;
 	line-height: 1;
 }
+
 .keyboard__key-line--small {
 	font-size: 0.875em;
 }
+
 .keyboard__key-line--tr {
 	margin: 0 0 auto auto;
 }
+
 .keyboard__key-line--br {
 	margin: auto 0 0 auto;
 }
+
 .keyboard__key-lines {
 	display: flex;
 	justify-content: center;
@@ -139,10 +157,12 @@ body {
 	height: 100%;
 	transition: transform 0.15s;
 }
+
 .keyboard__key:active .keyboard__key-lines,
 .keyboard__key.active .keyboard__key-lines {
 	transform: translateY(-1px);
 }
+
 .keyboard__key:before {
 	box-shadow: 0 0 0 0.5em hsla(223,90%,50%,0);
 	border-radius: 0.5em;
@@ -155,6 +175,7 @@ body {
 	height: 100%;
 	transition: box-shadow var(--trans-dur);
 }
+
 .keyboard__key:focus-visible:before {
 	box-shadow: 0 0 0 0.5em hsla(223,90%,50%,0.5);
 }

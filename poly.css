@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -18,7 +18,7 @@ body{
 }
 
 /*button component*/
-.button{
+.button {
   position: relative;
   padding: 1em 1.5em;
   border: none;
@@ -30,13 +30,13 @@ body{
 }
 
   /*button type*/
-  .button.type1{
+  .button.type1 {
       color: #566473;
   }
 
     /*effect 1*/
     .button.type1::after,
-    .button.type1::before{
+    .button.type1::before {
       content: '';
       display: block;
       position: absolute;
@@ -48,7 +48,7 @@ body{
       pointer-events: none;
     }
 
-    .button.type1::after{
+    .button.type1::after {
       bottom: 0;
       right: 0;
       border-top-color: transparent;
@@ -57,7 +57,7 @@ body{
       border-right-color: #566473;
     }
 
-    .button.type1::before{
+    .button.type1::before {
       top: 0;
       left: 0;
       border-bottom-color: transparent;
@@ -67,19 +67,19 @@ body{
     }
 
     .button.type1:hover:after,
-    .button.type1:hover:before{
+    .button.type1:hover:before {
       width: 98%;
       height: 96%;
     }
 
   /*button type*/
-  .button.type2{
+  .button.type2 {
     color: #16a085;
   }
 
     /*effect 2*/
     .button.type2:after,
-    .button.type2:before{
+    .button.type2:before {
       content: '';
       display: block;
       position: absolute;
@@ -93,23 +93,24 @@ body{
       pointer-events: none;
     }
 
-    .button.type2:hover:before{
+    .button.type2:hover:before {
       top: 0;
       transform: scale(1);
     }
 
-    .button.type2:hover:after{
+    .button.type2:hover:after {
+      bottom: 0;
       transform: scale(1);
     }
 
   /*button type*/
-  .button.type3{
+  .button.type3 {
     color: #435a6b;
     }
 
     /*effect 3 (and 1)*/
     .button.type3::after,
-    .button.type3::before{
+    .button.type3::before {
       content: '';
       display: block;
       position: absolute;
@@ -121,7 +122,7 @@ body{
       pointer-events: none;
     }
 
-    .button.type3::after{
+    .button.type3::after {
       bottom: 0;
       right: 0;
       border-top-color: transparent;
@@ -130,7 +131,7 @@ body{
       border-right-color: #435a6b;
     }
 
-    .button.type3::before{
+    .button.type3::before {
       top: 0;
       left: 0;
       border-bottom-color: transparent;
@@ -140,7 +141,7 @@ body{
     }
 
     .button.type3:hover:after,
-    .button.type3:hover:before{
+    .button.type3:hover:before {
       border-bottom-color: #435a6b;
       border-right-color: #435a6b;
       border-top-color: #435a6b;
@@ -150,12 +151,12 @@ body{
     }
 
   /*button type*/
-  .button.type4{
+  .button.type4 {
     color: red;
   }
 
     /*effect 4*/
-    .button.type4::after{
+    .button.type4::after {
       content: '';
       display: block;
       position: absolute;
@@ -167,10 +168,45 @@ body{
       pointer-events: none;
     }
 
-    .button.type4::after{
+    .button.type4::after {
       bottom: 0;
     }
 
-    .button:hover.type4::after{
+    .button:hover.type4::after {
       width: 100%;
+    }
+
+  /*button type*/
+  .button.type5 {
+    color: blue;
+  }
+
+    /*effect 5*/
+    .button.type5::before,
+    .button.type5::after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      left: 0;
+      background-color: blue;
+      transition: transform 0.3s ease-in-out;
+      transform: scaleX(0);
+      pointer-events: none;
+    }
+
+    .button.type5::before {
+      top: -1px;
+      transform-origin: left;
+    }
+
+    .button.type5::after {
+      bottom: -1px;
+      transform-origin: right;
+    }
+
+    .button:hover.type5::before,
+    .button:hover.type5::after {
+      transform: scaleX(1);
     }

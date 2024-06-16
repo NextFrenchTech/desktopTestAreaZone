@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Area Zone Desktop</title>
+    <link rel="stylesheet" href="playerW.css">
+    <link rel="stylesheet" href="https://assets.codepen.io/4927073/MyFontsWebfontsKit.css">
+</head>
+
+<body class="box" style="background-image: url('https://assets.codepen.io/4927073/Background.png'); background-image: url('https://media.pitchfork.com/photos/629a176f8443feaafec76182/master/pass/Post-Malone-Stoney.jpg');">
+
+    <main class="player">
+    <div class="header">
+
+        <p id="np">Now Playing</p>
+
+    </div>
+    <div src="https://pngimg.com/uploads/vinyl/vinyl_PNG21.png" alt="album" id="image3" class="image Big Lie">
+
+    </div>
+
+    <img loading="lazy" src="https://media.pitchfork.com/photos/629a176f8443feaafec76182/master/pass/Post-Malone-Stoney.jpg" alt="album" id="image" class="image Big Lie">
+
+    <div class="vinylcover"></div>
+    <img loading="lazy" src="https://media.pitchfork.com/photos/629a176f8443feaafec76182/master/pass/Post-Malone-Stoney.jpg" alt="album" id="image2" class="image Bie Lie">
+
+    <div class="information">
+        <p id="playlist_artist" class="Big Lie"></p>
+        <h1 id="playlist_status"></h1>
+
+    </div>
+
+    <ul class="buttons">
+        <span id="random" class="shuffle button button-sm">
+        <i class="fas fa-random fa-sm"></i>
+        </span>
+        <span id="prevbtn" class="prev button button-md">
+        <i class="fas fa-step-backward"></i>
+        </span>
+        <span id="playpausebtn" class="playpause button button-lg">
+        <i class="fas fa-play fa-lg"></i>
+        <i class="fas fa-pause fa-lg"></i>
+        </span>
+        <span id="nextbtn" class="next button button-md">
+        <i class="fas fa-step-forward"></i>
+        </span>
+        <span id="repeat" class="loop button button-sm">
+        <i class="fa fa-repeat fa-sm"></i>
+        </span>
+    </ul>
+
+    <div class="progress">
+        <div class="progress-time">
+        <span id="currenttimetext" class="left">00:00</span>
+        <span id="durationtimetext" class="right">00:00</span>
+        </div>
+        <div class="progress-bar">
+        <input type="range" name="" id="seekslider" class="seekslider Big Lie" min="0" max="100" value="0" step="1">
+        </div>
+    </div>
+
+    </main>
+
+<script src="https://kit.fontawesome.com/a2b3da0c65.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="playerW.js"></script>
+</body>
+</html>
