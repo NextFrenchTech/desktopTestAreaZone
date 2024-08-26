@@ -85,7 +85,7 @@
             <tbody>
                 <tr>
                     <td id="service-name">Service Inclus</td>
-                    <td id="service1-price">€0</td>
+                    <td id="service-price">€-</td>
                 </tr>
             </tbody>
         </table>
@@ -94,17 +94,17 @@
     <script>
         function updateTable(plan) {
             let serviceName = document.getElementById('service-name');
-            let service1Price = document.getElementById('service1-price');
+            let servicePrice = document.getElementById('service-price');
 
             if (plan === 'basic') {
                 serviceName.innerHTML = "Service Basic";
-                service1Price.innerHTML = "€10";
+                servicePrice.innerHTML = "€10";
             } else if (plan === 'standard') {
                 serviceName.innerHTML = "Service Standard";
-                service1Price.innerHTML = "€20";
+                servicePrice.innerHTML = "€20";
             } else if (plan === 'premium') {
                 serviceName.innerHTML = "Service Premium";
-                service1Price.innerHTML = "€30";
+                servicePrice.innerHTML = "€30";
             }
         }
     </script>
